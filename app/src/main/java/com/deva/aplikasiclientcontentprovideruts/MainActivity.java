@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         Uri allCheeses = Uri.parse("content://com.example.android.contentprovidersample.provider/cheeses");
         String[] projection = new String[]
                 {"_id", "name"};
-
         Cursor c;
         CursorLoader cursorLoader = new CursorLoader(
                 this,
@@ -50,17 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 "name" + " ASC");
         c = cursorLoader.loadInBackground();
         return c;
-//        printCheeses(c);
-//        String[] columns = new String[]{
-//                ContactsContract.Contacts.DISPLAY_NAME,
-//                ContactsContract.Contacts._ID};
-//
-//        int[] views = new int[]{R.id.contactName, R.id.contactID};
-//        SimpleCursorAdapter adapter;
-//        adapter = new SimpleCursorAdapter(
-//                this, R.layout.activity_main, c, columns, views,
-//                CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-//        this.setListAdapter(adapter);
     }
 
     private void printCheeses(Cursor c)
